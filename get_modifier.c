@@ -33,7 +33,7 @@ modifier_t *get_modifier(const char *s, unsigned int *pos)
 		return (NULL);
 	modif ->flags = get_flags(s, &i);
 	modif ->width = get_width(s, &i);
-	modif->precision = get_precision(s, &i);
+	modif ->precision = get_precision(s, &i);
 	modif->length = get_length(s, &i);
 	modif->specifier = get_specifier(s, &i);
 
