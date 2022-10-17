@@ -1,27 +1,24 @@
 #include "main.h"
+
 /**
- * print_rev - print a string in reverse
- * @ap:handle %r
- * @modif :struct modifier containig modifier fields
- * Return: lenght
+ * print_rev - prints a string in reverse
+ * @l: argument from _printf
+ * Return: length of the printed string
  */
-char *print_rev(modifier_t *modif, va_list ap)
+
+int print_rev(va_list l)
 {
-	int i;
-	int length;
-	char *str, *ret;
+	int i = 0, j;
+	char *s = va_arg(l, char *);
 
-	if (!ap || !modif)
-		return (0);
-	str = va_arg(ap, char *);
-	length = _strlen(str);
-	ret = malloc(length + 1);
-	if (!ret)
-		return (NULL);
+	if (!s)
+		s = "(null)";
 
-	for (i = 0; i < length; i++)
-		ret[i] = str[length - i - 1];
-	ret[i] = '\0';
+	while (s[i])
+		i++;
 
-	return (ret);
+	for (j = i - 1; j >= 0; j--)
+		_putchar(s[j]);
+
+	return (i);
 }
