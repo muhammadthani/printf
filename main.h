@@ -68,4 +68,4 @@ typedef struct print
 	char *(*func)(modifier_t *, va_list);
 } t_print;
 
-#endif
+#endf
